@@ -1,0 +1,11 @@
+  <launch>
+  <machine 
+        name = "jetson" 
+        address = "192.168.0.107" 
+        user = "ardumower"
+        env-loader = "~/ardumower/devel_isolated/jetson.sh">
+    </machine>
+
+    <node pkg="imu" type="imu_bno_node.py" name="imu_node" machine="jetson" output="screen"/>
+    <node pkg="rosserial_python" type="serial_node.py" name="serial" machine="jetson" output="screen"/>
+</launch>
