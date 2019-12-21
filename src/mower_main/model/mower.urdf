@@ -47,7 +47,7 @@
     <origin rpy="1.570796 0 0" xyz="0.0025 -0.187 0.1235"/>
 </joint>
 
-<link name="imu_link">
+<link name="imu">
 <visual>
   <geometry>
     <box size="0.020 0.027 0.010"/>
@@ -60,10 +60,28 @@
 
 <joint name="base_to_imu" type="fixed">
   <parent link="base_link"/>
-  <child link="imu_link"/>
-  <origin rpy="0 0 0" xyz="0 0 0.223"/>
+  <child link="imu"/>
+  <origin rpy="0 0 0" xyz="-0.405 0 0.223"/>
 </joint>
 
+<link name="gps">
+<visual>
+  <geometry>
+    <box size="0.020 0.027 0.010"/>
+  </geometry>
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+</visual>
+</link>
+
+<joint name="base_to_gps" type="fixed">
+  <parent link="base_link"/>
+  <child link="gps"/>
+  <origin rpy="0 0 0" xyz="0 0.08 0.223"/>
+</joint>
+
+<!--
 <link name="laser_base">
 <visual>
   <geometry>
@@ -97,4 +115,6 @@
   <child link="laser_link"/>
   <origin rpy="0 0 0" xyz="0.15 0 0.273"/>
 </joint>
+-->
+
 </robot>

@@ -6,4 +6,5 @@
     <!--node pkg="motor_ticks" type="random_ticks.py" name="random_ticks"/>
     <node pkg="motor_ticks" type="tick_node.py" name="tick_data"/>
     <node pkg="odometry" type="odom_node.py" name="odom"/-->
+    <include file="$(find husky_navigation)/launch/move_base_nav.launch"/>
 </launch>
